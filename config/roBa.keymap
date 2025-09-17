@@ -1,4 +1,5 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
