@@ -11,8 +11,12 @@
     quick-tap-ms = <0>;
 };
 
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 4 250>;
+};
+
 &trackball {
-    automouse-layer = <4>;
+    // automouse-layer = <4>;
     scroll-layers = <5>;
 
     // arrows {
@@ -65,6 +69,24 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        exit_AML: exit_AML {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&tog_off 4>;
+            label = "exit_AML";
+        };
+
+        kp_exit_AML: kp_exit_AML {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
+            label = "KP_exit_AML";
+        };
     };
 
     behaviors {
@@ -84,6 +106,24 @@
 
             tap-ms = <20>;
         };
+
+        tog_off: toggle_layer_off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
+
+        mt_exit_AML_on_tap: mt_exit_AML_on_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_exit_AML_ON_TAP";
+            bindings = <&kp>, <&kp_exit_AML>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <200>;
+        };
     };
 
     keymap {
@@ -93,7 +133,7 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R                 &kp T                                                           &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F                 &kp G        &kp LS(LG(S))                       &kp MINUS      &kp H        &kp J  &kp K      &kp L    &mt RCTRL SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                 &kp B        &kp SINGLE_QUOTE                    &kp EQUAL      &kp N        &kp M  &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X         &kp C         &kp V                 &kp B        &kp SINGLE_QUOTE                    &kp EQUAL      &kp N        &kp M  &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
 &kp RCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 TAB  &lt 2 SPACE  &lt_to_layer_0 3 RC(LS(SPACE))      &kp BACKSPACE  &lt 1 ENTER                             &mt LEFT_SHIFT ESC
             >;
 
