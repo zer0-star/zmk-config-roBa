@@ -162,10 +162,10 @@
 
         NUM {
             bindings = <
-&kp N1                      &kp N2           &kp N3           &kp N4           &kp N5                                               &kp N6              &kp N7             &kp N8          &kp N9                &kp N0
-&kp EXCL                    &kp AT           &kp HASH         &kp DOLLAR       &kp PERCENT  &kp LC(LA(KP_NUMBER_0))      &kp GRAVE  &kp CARET           &kp AMPS           &kp ASTRK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD   &kp EQUAL                    &trans     &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans                      &trans           &trans           &trans           &trans       &trans                       &trans     &mt LEFT_GUI ENTER                                                           &kp PIPE
+&kp EXCL                    &kp AT           &kp HASH         &kp DOLLAR       &kp PERCENT                                      &kp CARET           &kp AMPS           &kp ASTRK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp N1                      &kp N2           &kp N3           &kp N4           &kp N5       &kp LC(LA(KP_NUMBER_0))  &kp GRAVE  &kp N6              &kp N7             &kp N8          &kp N9                &kp N0
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD   &kp EQUAL                &trans     &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
+&trans                      &trans           &trans           &trans           &trans       &trans                   &trans     &mt LEFT_GUI ENTER                                                           &kp PIPE
             >;
         };
 
